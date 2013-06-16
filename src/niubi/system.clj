@@ -1,10 +1,11 @@
 ;;all functions required to bootstrap the system environment
 (ns niubi.system
-  (:require [datomic.api :as d]
+  (:require [clojure.java.io :as io]
+            [datomic.api :as d]
+            [ring.util.serve :as ringserve]
             [niubi.db :as db]
             [niubi.utils :as u]
-            [niubi.routes :as r]
-            [ring.util.serve :as ringserve]))
+            [niubi.routes :as r]))
 
 (defn get-dbvals
   "Returns a map of:
@@ -33,8 +34,8 @@
   "Returns a new instance of the whole application"
   []
   {:db {:uri "datomic:mem://dev"
-        :schema "/Users/timati/projects/niubi/resources/schema.clj"
-        :data "/Users/timati/projects/niubi/resources/data.clj"}
+        :schema (-> "schema.clj" io/resource io/file)
+        :data (-> "data.clj" io/resource io/file)}
    :handler r/app
    :server {:port 8080}})
 
