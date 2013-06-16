@@ -1,0 +1,1 @@
+([:dependencies ([org.clojure/clojure "1.5.1"] [com.datomic/datomic-free "0.8.4007"] [ring-serve/ring-serve "0.1.2"] [ring/ring-core "1.1.8"] [compojure/compojure "1.1.5"] [org.clojure/tools.nrepl "0.2.3"] [clojure-complete/clojure-complete "0.2.3"] [org.clojure/tools.namespace "0.2.3"] [org.clojure/java.classpath "0.2.0"])])
