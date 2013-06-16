@@ -1,6 +1,6 @@
 # niubi - template of a clojure workflow that creates app instances
 
-Based on Stuart Sierra's blog post at:
+This is the skeleton of an app I'm working on that is based on Stuart Sierra's blog post at:
 http://thinkrelevance.com/blog/2013/06/04/clojure-workflow-reloaded
 
 The system constructor has two main tasks:
@@ -9,6 +9,11 @@ values. It also adds a map of some database entities to the system
 variable for easy testing (schema and data files are in resources/)).
 * Start a webserver at port 8080. This can be changed from within the
 system-dev function.
+
+## Requirements
+This example requires datomic to be installed. Everything else should
+"just work." Edit the datomic part of the example to use the database
+of your choice.
 
 ## Usage
 
