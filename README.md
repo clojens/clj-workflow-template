@@ -7,7 +7,7 @@ http://thinkrelevance.com/blog/2013/06/04/clojure-workflow-reloaded
 The system constructor has two main tasks:
 1. Start up the database and seed it with a schema and a few test
 values. It also adds a map of some database entities to the system
-variable for easy testing.
+variable for easy testing (schema and data files are in resources/)).
 2. Start a webserver at port 8080. This can be changed from within the
 system-dev function.
 
