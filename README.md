@@ -1,5 +1,4 @@
-# niubi - template of a clojure workflow that creates application
-  instances on command
+# niubi - template of a clojure workflow that creates app instances
 
 Based on Stuart Sierra's blog post at:
 http://thinkrelevance.com/blog/2013/06/04/clojure-workflow-reloaded
