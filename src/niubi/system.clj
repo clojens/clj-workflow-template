@@ -45,8 +45,7 @@
   (let [dbmap (:db system)
         conn (db-reset (:uri dbmap))]
     (db-scaffold conn (:schema dbmap) (:data dbmap))
-    (ringserve/serve-headless (:handler system)
-                              (:port (:server system)))
+    (ringserve/serve-headless (:handler system))
     (-> system
         (assoc-in [:db :conn] conn)
         (assoc-in [:db :vals] (get-dbvals conn)))))
@@ -56,5 +55,7 @@
   resources. Returns an updated instance of the system."
   [system]
   (ringserve/stop-server)
-  (d/release (:conn (:db system)))
+  (when (:conn (:db system))
+    (d/release (:conn (:db system))))
+  system
 )
